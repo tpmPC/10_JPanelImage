@@ -1,5 +1,3 @@
-package jpanelimage;
-
 
 import java.io.File;
 import java.io.Serializable;
@@ -13,7 +11,7 @@ import java.io.Serializable;
  *
  * @author tpm_paucasesnovescif
  */
-public class bkgrndImg implements Serializable
+public class BackgroundImage implements Serializable
 {
     private File imageRoute;
     private float opacity;
@@ -38,7 +36,7 @@ public class bkgrndImg implements Serializable
         this.opacity = opacity;
     }
 
-    public bkgrndImg(File imageRoute, float opacity)
+    public BackgroundImage(File imageRoute, float opacity)
     {
         this.imageRoute = imageRoute;
         this.opacity = opacity;

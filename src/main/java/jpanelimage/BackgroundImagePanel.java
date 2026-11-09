@@ -24,12 +24,7 @@ public class BackgroundImagePanel extends javax.swing.JPanel
         initComponents();
     }
     
-    public bkgrndImg GetSelectedValue()
-    {
-        File f = new File(jTextFieldImageRoute.getText());
-        float opacity = jSliderOpacity.getValue()/100f;
-        return new bkgrndImg(f, opacity);
-    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -51,6 +46,7 @@ public class BackgroundImagePanel extends javax.swing.JPanel
 
         jLabelOpacity.setText("Opacity");
 
+        jTextFieldImageRoute.setEditable(false);
         jTextFieldImageRoute.addActionListener(this::jTextFieldImageRouteActionPerformed);
 
         jButtonImageRoute.setText("...");
@@ -95,6 +91,12 @@ public class BackgroundImagePanel extends javax.swing.JPanel
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextFieldImageRouteActionPerformed
 
+    public BackgroundImage GetSelectedValue()
+    {
+        File f = new File(jTextFieldImageRoute.getText());
+        float opacity = jSliderOpacity.getValue()/100f;
+        return new BackgroundImage(f, opacity);
+    }
     private void jButtonImageRouteActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButtonImageRouteActionPerformed
     {//GEN-HEADEREND:event_jButtonImageRouteActionPerformed
         JFileChooser fileChooser = new JFileChooser();
